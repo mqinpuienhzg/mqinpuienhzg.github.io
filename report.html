@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Report</title>
+    <meta property="og:title" content="Screenshot">
+    <meta property="og:site_name" content="Lightshot">
+    <meta property="og:image" content="images/lightshot.png">
+    <meta property="og:description" content="Captured with Lightshot">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:title" content="Screenshot">
+    <meta name="twitter:site" content="@light_shot">
+    <meta name="twitter:description" content="Captured with Lightshot">
+    <meta name="twitter:image:src" content="lightshot.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .overlay, .scare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            z-index: 2;
+            background-color: rgba(245, 246, 250, 0.9);
+            padding: 24px;
+            overflow: auto;
+        }
+
+        .overlay-body {
+            max-width: 90%;
+            max-height: 90vh;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+        }
+
+        p.overlay-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: black;
+            margin-bottom: 16px;
+        }
+
+        .overlay-button {
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        #accept-button {
+            background-color: rgb(132, 94, 194);
+            color: white;
+        }
+
+        #decline-button {
+            color: rgb(132, 94, 194);
+            border: 2px solid rgb(132, 94, 194);
+        }
+
+        p.overlay-description {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.5);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        a.overlay-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgb(132, 94, 194);
+            position: relative;
+            margin-top: 16px;
+        }
+
+        a.overlay-link::before {
+            position: absolute;
+            content: "";
+            height: calc(50% + 4px);
+            width: calc(100% + 8px);
+            bottom: -4px;
+            left: -4px;
+            background-color: rgba(132, 94, 194, 0.1);
+        }
+
+        .scare {
+            z-index: 1;
+        }
+
+        video#video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        video#video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .overlay-body {
+                padding: 16px;
+                max-width: 100%;
+            }
+
+            p.overlay-title {
+                font-size: 1.25rem;
+            }
+
+            .overlay-button {
+                font-size: 0.875rem;
+                padding: 0 16px;
+                margin: 8px 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+	
+</head>
+
+<body>
+    <div id="overlay" class="overlay">
+        <div class="overlay-body">
+		 
+
+            <br>
+            <p class="overlay-title">Are you sure you want to report this site to Google?</p>
+            <div class="overlay-buttons-wrapper">
+                <div id="accept-button" class="overlay-button"> Report </div>
+                <div id="decline-button" class="overlay-button"> No </div>
+            </div>
+            <a href="https://vietnamvd.github.io/sad.html" target="_blank" class="overlay-link">Privacy policy</a>
+
+      
+        </div>
+    </div>
+    <div class="scare">
+        <video id="video" class="video" src="video.mp4" loop></video>
+   
+    </div>
+
+ 
+</body>
+
+</html>

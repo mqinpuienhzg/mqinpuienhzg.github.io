@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển hướng</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="nextPageBtn">Trang tiếp theo</button>
+    <button id="openInGoogleBtn">Mở với Google</button>
+
+    <script>
+        document.getElementById("nextPageBtn").addEventListener("click", function() {
+            // Chuyển hướng tới trang tiếp theo khi bấm nút đầu tiên
+            window.location.href = "https://vietnamvd.github.io/";
+        });
+
+        document.getElementById("openInGoogleBtn").addEventListener("click", function() {
+            // Hiển thị thông báo yêu cầu mở bằng Google Chrome
+            if (confirm("Trang này cần được mở bằng Google Chrome. Bạn có muốn mở không?")) {
+                // Tạo liên kết để mở trang web trong Google Chrome
+                    const url = "https://dilink.net/FWbutyMul";
+                window.open("googlechrome://navigate?url=" + encodeURIComponent(url));
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển hướng</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="nextPageBtn">Trang tiếp theo</button>
+    <button id="openInGoogleBtn">Mở với Google</button>
+
+    <script>
+        function isChrome() {
+            // Kiểm tra xem trình duyệt có phải là Google Chrome không
+            return /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        }
+
+        document.getElementById("nextPageBtn").addEventListener("click", function() {
+            // Chuyển hướng tới trang tiếp theo khi bấm nút đầu tiên
+         
+               window.location.href = "https://vietnamvd.github.io/";
+        });
+
+        document.getElementById("openInGoogleBtn").addEventListener("click", function() {
+            const url = "https://dilink.net/FWbutyMul";
+            
+            if (isChrome()) {
+                // Nếu đang ở Google Chrome, truy cập thẳng vào trang
+                window.location.href = url;
+            } else {
+                // Nếu không phải Google Chrome, hiển thị thông báo yêu cầu mở bằng Google Chrome
+                if (confirm("Trang này cần được mở bằng Google Chrome. Bạn có muốn mở không?")) {
+                    window.open("googlechrome://navigate?url=" + encodeURIComponent(url));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
